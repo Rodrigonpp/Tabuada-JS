@@ -16,17 +16,18 @@ const createTable = (number, multiplicatorNumber) => {
   for (i = 1; i <= multiplicatorNumber; i++) {
     const result = number * i;
 
-    const template = `<div class="row">
-    <div class="operation">
-    ${number} x ${i} =
-    </div>
-    <div class="result">
-    ${result}
-    </div>
-    </div>`; // Utilizamos a variável template para criar a estrutura html que será adicionada
+    const template = `
+    <div class="row">
+      <div class="operation">
+        ${number} x ${i} =
+      </div>
+      <div class="result">
+        ${result}
+      </div>
+    </div>`;
 
-    const parser = new DOMParser(); // Esse é o objeto que converte strings para html com DOM
-    const htmlTemplate = parser.parseFromString(template, "text/html"); // .parseFromString(o template html, a forma de conversão "text/html")
+    const parser = new DOMParser();
+    const htmlTemplate = parser.parseFromString(template, "text/html");
 
     const row = htmlTemplate.querySelector(".row");
 
